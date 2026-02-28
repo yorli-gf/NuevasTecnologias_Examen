@@ -9,8 +9,9 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Instalar dependencias del sistema necesarias
-RUN apt-get update && apt-get install -y --no-install-recommends 
-    gcc 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libc-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar dependencias de la app
