@@ -35,13 +35,14 @@ resource "aws_lb" "alb_gonzalez" {
 # Target Group
 resource "aws_lb_target_group" "tg_gonzalez" {
   name        = "tg-${var.project_name}"
-  port        = 80
+  port        = 8000
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc_gonzalez.id
   target_type = "ip"
 
   health_check {
     path = "/"
+    port = "8000"
   }
 
   tags = { Name = "tg-${var.project_name}" }
