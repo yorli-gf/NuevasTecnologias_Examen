@@ -46,6 +46,7 @@ def home(request):
         <div class="container">
             <h1>Parcial 1</h1>
             <p>Yorli Gonzalez Falla</p>
+            <p>Actualmente jugando: Resident Evil Requiem <3</p>
             <div class="badge">AWS ECS Fargate + Django</div>
         </div>
     </body>
