@@ -1,0 +1,24 @@
+# Archivos de configuración de Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Estados de Terraform (pueden contener secretos)
+*.tfstate
+*.tfstate.*
+
+# Variables locales (suelen contener credenciales)
+*.tfvars
+*.tfvars.json
+
+# Archivos de log
+*.log
+
+# Archivos temporales o de backup
+*.bak
+*.tmp
+
+# Directorio de módulos descargados
+.terraform/modules/
+
+# Archivos de plan guardados
+*.tfplan

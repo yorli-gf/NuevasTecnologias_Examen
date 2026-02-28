@@ -1,0 +1,15 @@
+# Pasos para subir la imagen a ECR
+
+1. Autenticarse en ECR (Reemplaza <REGION> y <AWS_ACCOUNT_ID>):
+aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
+
+2. Construir la imagen de Docker (suponiendo que tienes un Dockerfile):
+docker build -t app-yorli-gonzalez .
+
+3. Etiquetar la imagen para el repositorio ECR:
+docker tag app-yorli-gonzalez:latest <ECR_REPOSITORY_URL>:latest
+
+4. Subir la imagen al repositorio:
+docker push <ECR_REPOSITORY_URL>:latest
+
+NOTA: Puedes obtener la URL del repositorio ejecutando 'terraform output ecr_repository_url' después de aplicar los cambios.
